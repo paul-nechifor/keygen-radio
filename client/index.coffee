@@ -1,16 +1,12 @@
 {ChiptuneJsPlayer, ChiptuneJsConfig} = require 'chiplib'
 
-songs = [
-  '/s/tunes/mysteristerium.mod'
-  '/s/tunes/rfchip001.xm'
-  '/s/tunes/cydonian sky.xm'
-  '/s/tunes/chipsounds.mod'
-]
+songs = require '../tunes/data.json'
 
 main = ->
   player = new ChiptuneJsPlayer new ChiptuneJsConfig 1
-  path = songs[(Math.random() * 4) | 0]
-  player.load path, (buffer) ->
+  index = (Math.random() * songs.length) | 0
+  console.log 'playing', songs[index]
+  player.load '/s/tunes/' + index, (buffer) ->
     player.play buffer
 
 main()

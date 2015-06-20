@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 root=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 
 main() {
@@ -7,13 +9,14 @@ main() {
 
   [[ -d node_modules ]] || npm i
   [[ -d bower_components ]] || bower install
+  [[ -d tunes ]] || ./scripts/download-music-pack
 
   echo -e '\n;\n' > crlf
 
   if [[ "$1" ]]; then
     "$@"
   else
-    build "$@"
+    debug
   fi
 
   rm -f crlf
@@ -30,9 +33,10 @@ production() {
   )
 }
 
-build() {
+debug() {
   build_deps debug
   gulp
+  rm -f crlf
   gulp serve
 }
 
@@ -49,6 +53,7 @@ build_deps() {
       bower_components/jquery/dist/jquery.min.js crlf \
       > build/s/deps.js
   fi
+  rsync -a --del tunes/files/ build/s/tunes/
 }
 
 main "$@"

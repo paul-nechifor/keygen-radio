@@ -4,6 +4,10 @@ Listen endlessly to keygen chiptunes in JS.
 
 ## Usage
 
+To make it work, you need some chiptunes. If you don't have a dir called
+`./tunes` (the default) the `./do` script below will get some from
+[keygenmusic.org](http://keygenmusic.org).
+
 Build the dev version:
 
     ./do
