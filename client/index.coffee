@@ -14,7 +14,7 @@ main = ->
 playRandomSong = (cb) ->
   index = (Math.random() * songs.length) | 0
   song = songs[index]
-  $('body') .text "Playing: #{song[0]} - #{song[1]}"
+  $('h3') .text "Playing: #{song[0]} - #{song[1]}"
 
   loadTune '/s/tunes/' + index, (err, tune) ->
     return cb "Error on loading song #{index}." if err
