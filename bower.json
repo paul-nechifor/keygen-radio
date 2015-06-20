@@ -1,0 +1,6 @@
+{
+  "name": "keygen-radio",
+  "dependencies": {
+    "jquery": "~2.1.4"
+  }
+}

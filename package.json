@@ -1,0 +1,30 @@
+{
+  "name": "keygen-radio",
+  "version": "0.0.0",
+  "author": "Paul Nechifor <paul@nechifor.net> (http://nechifor.net/)",
+  "scripts": {
+    "build": "gulp",
+    "start": "cd build && python -m SimpleHTTPServer",
+    "up": "npm install && npm run build && npm run start"
+  },
+  "dependencies": {
+    "browserify": "^10.2.4",
+    "chiplib": "^0.2.0",
+    "coffee-script": "^1.9.3",
+    "coffeeify": "^1.1.0",
+    "gulp": "^3.9.0",
+    "gulp-if": "^1.2.5",
+    "gulp-jade": "^1.0.1",
+    "gulp-sourcemaps": "^1.5.2",
+    "gulp-uglify": "^1.2.0",
+    "gulp-util": "^3.0.5",
+    "gulp-webserver": "^0.9.1",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0",
+    "yargs": "^3.10.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/paul-nechifor/keygen-radio"
+  }
+}
