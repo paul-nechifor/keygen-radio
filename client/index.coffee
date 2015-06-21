@@ -6,7 +6,7 @@ context = new AudioContext
 main = ->
   loopIt = ->
     playRandomSong (err) ->
-      alert err if err
+      console.log err if err
       setTimeout loopIt
 
   loopIt()
@@ -14,7 +14,7 @@ main = ->
 playRandomSong = (cb) ->
   index = (Math.random() * songs.length) | 0
   song = songs[index]
-  $('h3') .text "Playing: #{song[0]} - #{song[1]}"
+  $('.song-name') .text "Playing: #{song[0]} - #{song[1]}"
 
   loadTune '/s/tunes/' + index, (err, tune) ->
     return cb "Error on loading song #{index}." if err

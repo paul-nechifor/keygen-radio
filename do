@@ -55,6 +55,12 @@ build_deps() {
       > build/s/deps.js
   fi
   rsync -a --del tunes/files/ build/s/tunes/
+
+  export PATH="$PATH:node_modules/.bin"
+  [[ -d build/s/fonts ]] || mkdir -p build/s/fonts
+  cp fonts/chintzy.ttf build/s/fonts
+  ttf2woff fonts/chintzy.ttf build/s/fonts/chintzy.woff
+  ttf2eot fonts/chintzy.ttf build/s/fonts/chintzy.eot
 }
 
 copy_build() {

@@ -1,8 +1,10 @@
 argv = require('yargs').argv
 gulp = require 'gulp'
 gulpIf = require 'gulp-if'
+nib = require 'nib'
+rename = require 'gulp-rename'
 
-gulp.task 'default', ['js'], ->
+gulp.task 'default', ['js', 'css'], ->
   gulp.src './templates/index.jade'
   .pipe require('gulp-jade') locals: production: argv.production
   .pipe gulp.dest './build'
@@ -22,4 +24,12 @@ gulp.task 'js', ->
   .pipe require('gulp-uglify')()
   .on 'error', require('gulp-util').log
   .pipe gulpIf not argv.production, sourcemaps.write './'
+  .pipe gulp.dest './build/s'
+
+gulp.task 'css', ->
+  gulp.src './css/index.styl'
+  .pipe require('gulp-stylus')
+    compress: argv.production
+    use: nib()
+  .pipe rename basename: 'css'
   .pipe gulp.dest './build/s'
