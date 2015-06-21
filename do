@@ -61,4 +61,21 @@ copy_build() {
   vagrant ssh local -- 'sudo rsync -tr --del /vagrant/build/ /var/www/keygenradio/'
 }
 
+copy_build_to_production() {
+  local ip=$(
+    vagrant ssh keygen-radio-remote -- ifconfig eth0 |
+    grep 'inet addr:' | cut -d: -f2 | awk '{ print $1}'
+  )
+  echo "$ip"
+  local opts=(
+    ssh
+    -o Compression=yes
+    -o StrictHostKeyChecking=no
+    -o UserKnownHostsFile=/dev/null
+    -o IdentitiesOnly=yes
+    -i ~/.ssh/vagrant_do_rsa
+  )
+  rsync -e "${opts[*]}" -trv --del build/ "root@$ip:/var/www/keygenradio/"
+}
+
 main "$@"
