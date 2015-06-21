@@ -34,10 +34,11 @@ production() {
 }
 
 debug() {
+  vagrant up local
   build_deps debug
   gulp
   rm -f crlf
-  gulp serve
+  copy_build
 }
 
 build_deps() {
@@ -54,6 +55,10 @@ build_deps() {
       > build/s/deps.js
   fi
   rsync -a --del tunes/files/ build/s/tunes/
+}
+
+copy_build() {
+  vagrant ssh local -- 'sudo rsync -tr --del /vagrant/build/ /var/www/keygenradio/'
 }
 
 main "$@"

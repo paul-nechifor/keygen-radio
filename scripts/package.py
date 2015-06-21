@@ -10,7 +10,7 @@ import sys
 def main():
     indir, outdir, data_file = sys.argv[1:4]
     extensions = {'xm', 'mod', 'it', 'v2m'}
-    max_size = 1024 ** 2
+    max_size = 256 * 1024
     tunes = []
     for root, dirs, files in os.walk(indir):
         for file in files:

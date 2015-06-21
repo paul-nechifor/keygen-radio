@@ -23,7 +23,3 @@ gulp.task 'js', ->
   .on 'error', require('gulp-util').log
   .pipe gulpIf not argv.production, sourcemaps.write './'
   .pipe gulp.dest './build/s'
-
-gulp.task 'serve', ->
-  gulp.src './build'
-  .pipe require('gulp-webserver')()
