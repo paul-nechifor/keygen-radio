@@ -1,6 +1,7 @@
 # Keygen Radio
 
-Listen endlessly to keygen chiptunes in JS.
+Listen endlessly to keygen chiptunes in JS. This is the source code for [Keygen
+Radio][kgradio].
 
 ## Development
 
@@ -8,7 +9,7 @@ Requirements: Vagrant, Gulp, Ubuntu.
 
 To make it work, you need some chiptunes. If you don't have a dir called
 `./tunes` (the default) the `./do` script below will get some from
-[keygenmusic.org](http://keygenmusic.org).
+[keygenmusic.org][kgmusic]
 
 Build the dev version:
 
@@ -26,3 +27,18 @@ That deletes any previous build and creates the production one. You can now copy
 that deployment to Vagrant with:
 
     ./do copy_build
+
+## Acknowledgements
+
+This uses [chiplib][chiplib], my fork of Simon Gündling's
+[chiptune2][chiptune2]. It uses Emscripten to transpile [libopenmpt][libopenmpt]
+into JavaScript.
+
+## License
+
+GPL v2
+[kgradio]: http://keygenradio.com
+[kgmusic]: http://keygenmusic.org
+[chiplib]: https://github.com/paul-nechifor/chiplib
+[chiptune2]: https://github.com/deskjet/chiptune2.js
+[libopenmpt]: http://lib.openmpt.org/libopenmpt
