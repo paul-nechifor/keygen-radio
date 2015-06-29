@@ -43,6 +43,7 @@ debug() {
 
 build_deps() {
   mkdir -p build/s
+  rsync -a --del static/ build/s/
   if [[ "$1" ]]; then
     cat \
       node_modules/chiplib/libopenmpt.js crlf \

@@ -6,18 +6,27 @@ html
     title Keygen Radio
     link(rel='stylesheet', href='/s/css.css')
   body
+    .top-background
+      h1
+        a(href='http://keygenradio.com') Keygen Radio
+
+    .bottom-background
+      footer
+        p Created by <a href='http://nechifor.net'>Paul Nechifor</a>.
+        p
+          a(href='https://github.com/paul-nechifor/keygen-radio').
+            Fork on GitHub.
+
+    .player
+      .song-name
+
+      .controls
+        .pause Pause
+        .next Next
+
+
     if production
       script(src='/s/js.js')
     else
       script(src='/s/deps.js')
       script(src='/s/client.js')
-
-    h1 Keygen Radio
-
-    .song-name
-
-    footer
-      p Created by <a href='http://nechifor.net'>Paul Nechifor</a>.
-      p
-        a(href='https://github.com/paul-nechifor/keygen-radio').
-          Fork on GitHub.

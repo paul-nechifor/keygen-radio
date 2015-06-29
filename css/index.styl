@@ -11,25 +11,59 @@
 
 normalize-css()
 
+grab-size = 20%
+
 body
-  background #000
+  background #003643
   font-family 'Chintzy'
   color #0f0
   letter-spacing 2px
+  position relative
+
+.top-background, .bottom-background
+  background-repeat no-repeat
+  background-position-x center
+  background-size cover
+  position fixed
+  width 100%
+  min-height grab-size
+
+.top-background
+  background-image url('/s/top-background.png')
+  background-position-y bottom
+  top 0
+
+.bottom-background
+  background-image url('/s/bottom-background.png')
+  background-position-y top
+  bottom 0
+
+.player
+  position fixed
+  top grab-size
+  width 100%
+  height 100% - 2 * grab-size
 
 h1
   font-size 40px
-  letter-spacing 4px
+  letter-spacing 5px
+  padding-top 20px
+  a
+    color #fff
+    text-decoration none
 
 .song-name
   font-size 24px
   letter-spacing 3px
+  color #fff
 
 a
-  color #0c0
+  color #fff
+  text-decoration none
 
 h1, .song-name, footer
   text-align center
 
 footer
-  font-size 14px
+  font-size 16px
+  color #0ff
