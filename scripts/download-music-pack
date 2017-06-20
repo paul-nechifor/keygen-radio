@@ -1,7 +1,7 @@
 #!/bin/bash
 
 root=$( cd "$( dirname "${BASH_SOURCE[0]}" )/.." && pwd )
-pack="http://pub.keygenmusic.org/music%20pack/2015/2015-04/2015-04-pack.7z"
+pack="http://pub.keygenmusic.org/music%20pack/2017/2017-04/2017-04-pack.7z"
 
 main() {
   cd "$root"

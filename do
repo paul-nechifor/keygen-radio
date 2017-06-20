@@ -8,7 +8,6 @@ main() {
   cd "$root"
 
   [[ -d node_modules ]] || npm i
-  [[ -d bower_components ]] || bower install
   [[ -d tunes ]] || ./scripts/download-music-pack
 
   echo -e '\n;\n' > crlf
@@ -34,11 +33,11 @@ production() {
 }
 
 debug() {
-  vagrant up local
+  # vagrant up local
   build_deps debug
   gulp
   rm -f crlf
-  copy_build
+  # copy_build
 }
 
 build_deps() {
@@ -47,12 +46,12 @@ build_deps() {
   if [[ "$1" ]]; then
     cat \
       node_modules/chiplib/libopenmpt.js crlf \
-      bower_components/jquery/dist/jquery.js crlf \
+      node_modules/jquery/dist/jquery.js crlf \
       > build/s/deps.js
   else
     cat \
       node_modules/chiplib/libopenmpt.js crlf \
-      bower_components/jquery/dist/jquery.min.js crlf \
+      node_modules/jquery/dist/jquery.min.js crlf \
       > build/s/deps.js
   fi
   rsync -a --del tunes/files/ build/s/tunes/
