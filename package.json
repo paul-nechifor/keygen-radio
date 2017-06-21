@@ -4,7 +4,7 @@
   "author": "Paul Nechifor <paul@nechifor.net> (http://nechifor.net/)",
   "scripts": {
     "build": "gulp",
-    "start": "cd build && python -m SimpleHTTPServer",
+    "start": "cd dist && python -m SimpleHTTPServer",
     "up": "npm install && npm run build && npm run start"
   },
   "dependencies": {

@@ -34,6 +34,10 @@ This uses [chiplib][chiplib], my fork of Simon Gündling's
 [chiptune2][chiptune2]. It uses Emscripten to transpile [libopenmpt][libopenmpt]
 into JavaScript.
 
+## TODO
+
+- Add a modal for more info on the homepage.
+
 ## License
 
 GPL v2

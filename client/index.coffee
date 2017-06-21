@@ -16,7 +16,7 @@ playRandomSong = (cb) ->
   song = songs[index]
   $('.song-name') .text "Playing: #{song[0]} - #{song[1]}"
 
-  loadTune '/s/tunes/' + index, (err, tune) ->
+  loadTune 'tunes/' + index, (err, tune) ->
     return cb "Error on loading song #{index}." if err
     new NodeWrapper context, tune
     .start (err) ->

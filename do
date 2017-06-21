@@ -22,12 +22,12 @@ main() {
 }
 
 production() {
-  rm -fr build
+  rm -fr dist
   build_deps
   gulp --production
   (
-    cd build/s;
-    cat deps.js ../../crlf client.js > js.js
+    cd dist;
+    cat deps.js ../crlf client.js > js.js
     rm deps.js client.js
   )
 }
@@ -41,26 +41,26 @@ debug() {
 }
 
 build_deps() {
-  mkdir -p build/s
-  rsync -a --del static/ build/s/
+  mkdir -p dist
+  rsync -a --del static/ dist/
   if [[ "$1" ]]; then
     cat \
       node_modules/chiplib/libopenmpt.js crlf \
       node_modules/jquery/dist/jquery.js crlf \
-      > build/s/deps.js
+      > dist/deps.js
   else
     cat \
       node_modules/chiplib/libopenmpt.js crlf \
       node_modules/jquery/dist/jquery.min.js crlf \
-      > build/s/deps.js
+      > dist/deps.js
   fi
-  rsync -a --del tunes/files/ build/s/tunes/
+  rsync -a --del tunes/files/ dist/tunes/
 
   export PATH="$PATH:node_modules/.bin"
-  [[ -d build/s/fonts ]] || mkdir -p build/s/fonts
-  cp fonts/chintzy.ttf build/s/fonts
-  ttf2woff fonts/chintzy.ttf build/s/fonts/chintzy.woff
-  ttf2eot fonts/chintzy.ttf build/s/fonts/chintzy.eot
+  [[ -d dist/fonts ]] || mkdir -p dist/fonts
+  cp fonts/chintzy.ttf dist/fonts
+  ttf2woff fonts/chintzy.ttf dist/fonts/chintzy.woff
+  ttf2eot fonts/chintzy.ttf dist/fonts/chintzy.eot
 }
 
 copy_build() {

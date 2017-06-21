@@ -7,7 +7,7 @@ rename = require 'gulp-rename'
 gulp.task 'default', ['js', 'css'], ->
   gulp.src './templates/index.jade'
   .pipe require('gulp-jade') locals: production: argv.production
-  .pipe gulp.dest './build'
+  .pipe gulp.dest './dist'
 
 gulp.task 'js', ->
   sourcemaps = require 'gulp-sourcemaps'
@@ -24,7 +24,7 @@ gulp.task 'js', ->
   .pipe require('gulp-uglify')()
   .on 'error', require('gulp-util').log
   .pipe gulpIf not argv.production, sourcemaps.write './'
-  .pipe gulp.dest './build/s'
+  .pipe gulp.dest './dist'
 
 gulp.task 'css', ->
   gulp.src './css/index.styl'
@@ -32,4 +32,4 @@ gulp.task 'css', ->
     compress: argv.production
     use: nib()
   .pipe rename basename: 'css'
-  .pipe gulp.dest './build/s'
+  .pipe gulp.dest './dist'
