@@ -3,9 +3,8 @@
   "version": "0.2.0",
   "author": "Paul Nechifor <paul@nechifor.net> (http://nechifor.net/)",
   "scripts": {
-    "build": "gulp",
-    "start": "cd dist && python -m SimpleHTTPServer",
-    "up": "npm install && npm run build && npm run start"
+    "build": "./scripts/build",
+    "start": "cd dist && python -m SimpleHTTPServer"
   },
   "dependencies": {
     "browserify": "^10.2.4",

@@ -5,28 +5,19 @@ Radio][kgradio].
 
 ## Development
 
-Requirements: Vagrant, Gulp, Ubuntu.
-
 To make it work, you need some chiptunes. If you don't have a dir called
 `./tunes` (the default) the `./do` script below will get some from
 [keygenmusic.org][kgmusic]
 
-Build the dev version:
+Build everything with:
 
-    ./do
+    npm install
+    npm run build
 
-That will start Vagrant if it's not started and build all the necessary things.
-The Nginx server inside Vagrant will be available at
-[172.18.123.121](http://172.18.123.121).
+Everything that's required will be built in `./dist`. Start a static server that
+will serve it with:
 
-Build the production version:
-
-    ./do production
-
-That deletes any previous build and creates the production one. You can now copy
-that deployment to Vagrant with:
-
-    ./do copy_build
+    npm start
 
 ## Acknowledgements
 

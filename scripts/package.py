@@ -1,10 +1,10 @@
 #!/usr/bin/env python2.7
 
-from os.path import join, getsize
 import json
 import os
 import shutil
 import sys
+from os.path import join, getsize
 
 
 def main():
