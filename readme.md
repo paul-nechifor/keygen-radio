@@ -3,6 +3,8 @@
 Listen endlessly to keygen chiptunes in JS. This is the source code for [Keygen
 Radio][kgradio].
 
+![Screenshot](screenshot.png)
+
 ## Usage
 
 To make it work, you need some chiptunes. You can download (and process) the
