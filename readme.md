@@ -14,16 +14,16 @@ archive from [keygenmusic.org][kgmusic] by running:
 
 Install the requirements:
 
-    npm install
+    yarn
 
 Build everything with:
 
-    npm run build
+    yarn build
 
 Everything that’s required will be built in `./dist`. Start a static server that
 will serve it with:
 
-    npm start
+    yarn start
 
 ## Acknowledgements
 

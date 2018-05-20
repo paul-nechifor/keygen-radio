@@ -1,0 +1,35 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='x-ua-compatible', content='ie=edge')
+    title Keygen Radio
+    meta(name='viewport', content='width=device-width,initial-scale=1')
+    meta(name='description', content='Listen endlessly to keygen chiptunes in JS.')
+    link(rel='apple-touch-icon', href='/favicon152.png')
+    link(rel='stylesheet', href='css.css')
+  body
+    .top-background
+      h1
+        a(href='http://keygenradio.com') Keygen Radio
+
+    .bottom-background
+      .footer
+        :markdown-it
+          Created by [Paul Nechifor](/). [View the Git source.](https://github.com/paul-nechifor/keygen-radio)
+
+        small: :markdown-it
+          [Home](/) •
+          [Blog](/blog) •
+          [Projects](/projects) •
+          [Twitter](https://twitter.com/PaulNechifor)
+
+    .player
+      .song-name
+
+      .controls
+        .pause Pause
+        .next Next
+
+
+    script(src='js.js')
