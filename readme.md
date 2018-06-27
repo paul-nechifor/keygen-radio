@@ -1,3 +1,7 @@
+# This repository has been moved to [gitlab.com/paul-nechifor/keygen-radio](http://gitlab.com/paul-nechifor/keygen-radio).
+
+Old readme:
+
 # Keygen Radio
 
 Listen endlessly to keygen chiptunes in JS. This is the source code for [Keygen
